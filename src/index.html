@@ -1,26 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <script>
+      function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-<head>
-  <meta charset="utf-8" />
-  <title>Ionic App</title>
+        // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+          return "Windows Phone";
+        }
 
-  <base href="/" />
+        if (/android/i.test(userAgent)) {
+          return "android";
+        }
 
-  <meta name="color-scheme" content="light dark" />
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "ios";
+        }
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+        return "unknown";
+      }
 
-  <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-</head>
+      var platform = getMobileOperatingSystem();
 
-<body>
-  <app-root></app-root>
-</body>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("combined-sw.js")
+          .then(() => console.log("service worker installed"))
+          .catch((err) => console.log("Error", err));
+      }
 
+      if (platform === "android" || platform == "ios") {
+        document.write('<base href="/" />');
+      } else {
+        document.write('<base href="./" />');
+      }
+
+      if (platform === "android" || platform == "ios") {
+        document.write(
+          '<link rel="icon" type="image/png" href="/assets/icon/favicon.png"/>'
+        );
+      } else {
+        document.write(
+          '<link rel="icon" type="image/png" href="assets/icon/favicon.png"/>'
+        );
+      }
+    </script>
+    <meta charset="utf-8" />
+    <title>Ionic App</title>
+
+    <!--base href="/" /-->
+
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  </head>
+
+  <body>
+    <app-root></app-root>
+    <div class="custom-overlay">
+      <ion-grid>
+        <ion-row class="splashIcon">
+          <ion-thumbnail class="splashIcon">
+            <ion-img
+              class="splashIcon"
+              id="splashImg"
+              src="/assets/images/emol-diagram.gif"
+            ></ion-img>
+          </ion-thumbnail>
+        </ion-row>
+        <ion-row class="splashLabel">
+          <ion-label class="splashLabel">eMoldino Serenity</ion-label>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </body>
 </html>

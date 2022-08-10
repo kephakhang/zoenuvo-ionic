@@ -1,0 +1,40 @@
+<nb-card style="display: flex; flex-direction: column">
+  <nb-card-header>{{ title }}</nb-card-header>
+  <nb-card-body>
+    <ng-container *ngIf="isRange">
+      <ion-input #start placeholder="Enter start range"></ion-input>
+      <span> ~ </span>
+      <ion-input #end placeholder="Enter end range"></ion-input>
+    </ng-container>
+    <nb-container *ngIf="isUpdate">
+      <input
+        #autoInput
+        nbInput
+        type="text"
+        (input)="onChange()"
+        placeholder="Enter search word"
+        [nbAutocomplete]="auto"
+        [value]="selectedOption" />
+      <nb-autocomplete #auto (selectedChange)="onSelectionChange($event)">
+        <nb-option
+          *ngFor="let option of filteredOptions$ | async"
+          [value]="option">
+          {{ option }}
+        </nb-option>
+      </nb-autocomplete>
+    </nb-container>
+  </nb-card-body>
+  <nb-card-footer>
+    <ion-button color="primary" (click)="dismiss()">Dismiss</ion-button>
+    <ng-container *ngIf="isRange">
+      <ion-button color="danger" (click)="submit()">
+        {{ confirm }}
+      </ion-button>
+    </ng-container>
+    <ng-container *ngIf="!isRange">
+      <ion-button color="danger" (click)="submit2()">
+        {{ confirm }}
+      </ion-button>
+    </ng-container>
+  </nb-card-footer>
+</nb-card>

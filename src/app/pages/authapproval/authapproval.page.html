@@ -1,0 +1,158 @@
+<ion-header>
+</ion-header>
+
+<!-- ios 상태표시줄 영역 설정 -->
+<ion-row class="iosStatusBar">
+  </ion-row>  
+
+<ion-content>
+
+  <div class="container">
+    <div class="outer">
+      <div class="inner">
+        <ion-content class="ion-padding">
+
+          <!-- 제목(PR플러스 권한 승인 안내) -->
+          <ion-row>
+            <label class="authApproval">PR플러스 권한 승인 안내</label>
+          </ion-row>
+          <!-- 아이콘(PR+) -->
+          <ion-row>
+            <ion-col>
+              <ion-thumbnail>
+                <ion-img class="prLogo" src="{{auth.root}}assets/imgs/btn_friend_prhome_nor@3x.png"></ion-img>
+              </ion-thumbnail>
+            </ion-col>
+          </ion-row>
+          <!-- 권한승인 Intro -->
+          <ion-row>
+            <label class="authApprovalIntro">PR플러스를 이용하시려면 <br> 아래의 권한을 허용해 주세요.</label>
+          </ion-row>
+          <!-- 권한승인 내용 -->
+          <ion-row>
+            <ion-col>
+              <ion-thumbnail>
+                <ion-img class="autoLogo" src="{{auth.root}}assets/imgs/btn_friend_prhome_nor@3x.png"></ion-img>
+              </ion-thumbnail>
+            </ion-col>
+            <ion-col class="authContent">
+              <ion-row>
+                <label class="authContent">연락처</label>
+              </ion-row>
+              <ion-row>
+                <label class="authContentIntro">내 지인정보 서비스 제공</label>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <!-- 권한승인 Intro2 -->
+          <ion-row>
+            <label class="authApprovalIntro2">필수 권한을 설정하지 않으시면, 앱 사용이 제한됩니다.<br>
+              (안드로이드 마시멜로 6.0 이상 사용자 대상</label>
+          </ion-row>
+
+        </ion-content>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <!-- 푸터 설정 -->
+    <ion-row class="footer">
+      <!-- 권한 승인하기 버튼 -->
+      <ion-col class="ion-no-padding">
+        <button class="authApproval" (click)='authApproval()'>권한 승인하기</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+<style>
+  /* 기본 틀 잡기 */
+  /* 수직 가운데 정렬 */
+
+  div.container {
+    display: table;
+    width: 100%;
+    height: 80%;
+  }
+
+  div.outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+
+  div.inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  /* 제목(PR플러스 권한승인 안내) */
+  label.authApproval {
+    width: 100%;
+  }
+
+  /* 아이콘(PR+) */
+  img.prLogo {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  /* 권한승인 intro */
+  label.authApprovalIntro {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+
+  /* 권한승인 content */
+  /* 권한승인 Icon */
+  img.authLogo {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  ion-col.authContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* 권한승인 내용 */
+  label.authContent {
+    font-size: 1.5rem;
+  }
+
+  /* 권한승인 내용설명 */
+  label.authContentIntro {
+    font-size: 1rem;
+  }
+
+  /* 권한승인 intro2 */
+  label.authApprovalIntro2 {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  /* 상품리뷰 / 공유 */
+  ion-row.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* 상품리뷰 */
+  button.authApproval {
+    width: 100%;
+    height: 6rem;
+    font-size: 1.3rem;
+    color: white;
+    background-color: gray;
+  }
+</style>

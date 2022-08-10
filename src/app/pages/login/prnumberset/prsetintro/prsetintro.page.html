@@ -1,0 +1,92 @@
+<ion-header>
+</ion-header>
+
+<!-- ios 상태표시줄 영역 설정 -->
+<ion-row class="iosStatusBar">
+  </ion-row>  
+
+<!-- 헤더설정 -->
+<!-- <div class="header">
+    <ion-row class="header">
+      <ion-col class="header ion-no-padding" size="auto">
+        <ion-thumbnail class="header" (click)='close()'>
+          <ion-img class="close" src="{{auth.root}}assets/png/btn_close.png"></ion-img>
+        </ion-thumbnail>
+      </ion-col>
+    </ion-row>
+  </div> -->
+
+<ion-content>
+  <ion-row class="guideImg">
+    <ion-thumbnail class="guideImg">
+      <ion-img class="guideImg" src="{{auth.root}}assets/png/img_prnumber_guide.png"></ion-img>
+    </ion-thumbnail>
+  </ion-row>
+  <!-- <div class="check">
+      <ion-row class="check">
+        <ion-button class="check" (click)='complete()'>나만의 PR넘버 생성하기</ion-button>
+      </ion-row>
+    </div>     -->
+</ion-content>
+
+<div class="check">
+  <ion-row class="check">
+    <ion-button class="check" (click)='complete()'>완료</ion-button>
+  </ion-row>
+</div>
+
+
+<!-- --------------------------------------------------------------------------------------------- -->
+
+
+<style>
+  div.header {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+
+  ion-row.header {
+    justify-content: flex-end;
+    border: none;
+    background: inherit;
+  }
+
+  div.container {
+    padding: 0rem 1.5rem;
+  }
+
+  ion-row.guideImg{
+    margin-top: 2rem;
+  }
+
+  ion-thumbnail.guideImg{
+    width: auto;
+    height: auto;
+  }
+
+  ion-img.guideImg{
+    width: 100vw;
+    height: auto;
+  }
+
+  div.check {
+    background: white;
+    padding: 0rem 1.5rem;
+  }
+
+  ion-row.check {
+    margin-bottom: 2rem;
+  }
+
+  ion-button.check {
+    font-size: 1rem;
+    width: 100%;
+    height: 4rem;
+    --background: var(--pplus-blue);
+    --border-radius: 2rem;
+    border-radius: 2rem;
+    color: white;
+    --box-shadow: none;
+  }
+</style>

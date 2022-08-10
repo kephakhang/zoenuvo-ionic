@@ -1,0 +1,392 @@
+<ion-content>
+  <div class="container">
+    <ion-slides class="slidetype">
+
+      <!-- 슬라이드 1 -->
+      <ion-slide class="slidetype">
+        <div class="slidetype">
+          <ion-row class="introTitle1">
+            <ion-label class="introTitle1">픽업 및 배달 매장을</ion-label>
+          </ion-row>
+          <ion-row class="introTitle2">
+            <ion-label class="introTitle2">운영중이신가요?</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-col class="arrow ion-no-padding" size="auto">
+              <ion-thumbnail class="arrow">
+                <!-- <ion-img class="arrow" src="{{auth.root}}assets/png/ic_login_arrow_left.png"></ion-img> -->
+              </ion-thumbnail>
+            </ion-col>
+            <ion-col>
+              <ion-row class="slideImage">
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_delivery_01.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">한식</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_delivery_02.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">피자집</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_delivery_03.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">중국집</ion-label>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+              <ion-row class="slideImage">
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_delivery_04.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">패스트푸드</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_delivery_05.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">치킨집</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_delivery_06.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">카페</ion-label>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="arrow ion-no-padding" size="auto">
+              <ion-thumbnail class="arrow">
+                <ion-img class="arrow" src="{{auth.root}}assets/png/ic_login_arrow_right.png"></ion-img>
+              </ion-thumbnail>
+            </ion-col>
+          </ion-row>
+          <ion-row class="introContext">
+            <ion-label class="introContext">(업종예시: 일식, 야식, 분식, 한식, 피자집, 중국집, 치킨집, 디저트, 일식, 야식 분식 등등)</ion-label>
+          </ion-row>
+          <ion-row class="select">
+            <ion-button class="select" (click)='delivery()'>픽업 배달 매장 선택</ion-button>
+          </ion-row>
+        </div>
+      </ion-slide>
+
+      <!-- 슬라이드 2 -->
+      <ion-slide class="slidetype">
+        <div class="slidetype">
+          <ion-row class="introTitle1">
+            <ion-label class="introTitle1">오프라인 매장을</ion-label>
+          </ion-row>
+          <ion-row class="introTitle2">
+            <ion-label class="introTitle2">운영중이신가요?</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-col class="arrow ion-no-padding" size="auto">
+              <ion-thumbnail class="arrow">
+                <ion-img class="arrow" src="{{auth.root}}assets/png/ic_login_arrow_left.png"></ion-img>
+              </ion-thumbnail>
+            </ion-col>
+            <ion-col>
+              <ion-row class="slideImage">
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_offline_01.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">뷰티</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_offline_02.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">가구</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_offline_03.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">악세사리</ion-label>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+              <ion-row class="slideImage">
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_offline_04.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">신발</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_offline_05.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">옷집</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_offline_06.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">인테리어</ion-label>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="arrow ion-no-padding" size="auto">
+              <ion-thumbnail class="arrow">
+                <!-- <ion-img class="arrow" src="{{auth.root}}assets/png/ic_login_arrow_right.png"></ion-img> -->
+              </ion-thumbnail>
+            </ion-col>
+          </ion-row>
+          <ion-row class="introContext">
+            <ion-label class="introContext">(업종예시: 일식, 야식, 분식, 한식, 피자집, 중국집, 치킨집, 디저트, 일식, 야식 분식 등등)</ion-label>
+          </ion-row>
+          <ion-row class="select">
+            <ion-button class="select" (click)='offline()'>일반매장 선택</ion-button>
+          </ion-row>
+        </div>
+      </ion-slide>
+      <!-- 슬라이드 3 -->
+      <!-- <ion-slide class="slidetype">
+        <div class="slidetype">
+          <ion-row class="introTitle1">
+            <ion-label class="introTitle1">개인/전문가 서비스를</ion-label>
+          </ion-row>
+          <ion-row class="introTitle2">
+            <ion-label class="introTitle2">운영중이신가요?</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-col class="arrow ion-no-padding" size="auto">
+              <ion-thumbnail class="arrow">
+                <ion-img class="arrow" src="{{auth.root}}assets/png/ic_login_arrow_left.png"></ion-img>
+              </ion-thumbnail>
+            </ion-col>
+            <ion-col>
+              <ion-row class="slideImage">
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_individual_01.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">개인레슨</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_individual_02.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">PT강사</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_individual_03.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">도우미</ion-label>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+              <ion-row class="slideImage">
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_individual_04.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">과외</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_individual_05.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">전문가</ion-label>
+                  </ion-row>
+                </ion-col>
+                <ion-col class="slideImage ion-no-padding" size="auto">
+                  <ion-row>
+                    <ion-thumbnail class="slideImage">
+                      <ion-img class="slideImage" src="{{auth.root}}assets/png/img_login_individual_06.png"></ion-img>
+                    </ion-thumbnail>
+                  </ion-row>
+                  <ion-row class="slideImageLabel">
+                    <ion-label class="slideImageLabel">미용사</ion-label>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col class="arrow ion-no-padding" size="auto">
+              <ion-thumbnail class="arrow">
+               <ion-img class="arrow" src="{{auth.root}}assets/png/ic_login_arrow_right.png"></ion-img> 
+              </ion-thumbnail>
+            </ion-col>
+          </ion-row>
+          <ion-row class="introContext">
+            <ion-label class="introContext">(업종예시: 일식, 야식, 분식, 한식, 피자집, 중국집, 치킨집, 디저트, 일식, 야식 분식 등등)</ion-label>
+          </ion-row>
+          <ion-row class="select">
+            <ion-button class="select" (click)='individual()'>개인전문가 선택</ion-button>
+          </ion-row>
+        </div>
+      </ion-slide> -->
+
+    </ion-slides>
+  </div>
+</ion-content>
+
+
+<!-- ----------------------------------------------------------------------------------------------------------------- -->
+
+
+<style>
+  ion-slides.slidetype {
+    width: 100%;
+    height: 100%;
+  }
+
+  div.slidetype {
+    width: 100%;
+    height: 100%;
+  }
+
+  ion-row.introTitle1 {
+    justify-content: center;
+    margin-top: 15vh;
+  }
+
+  ion-label.introTitle1 {
+    font-size: 2.3rem;
+    color: var(--pplus-blue);
+  }
+
+  ion-row.introTitle2 {
+    justify-content: center;
+  }
+
+  ion-label.introTitle2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  ion-col.arrow {
+    display: flex;
+    align-items: center;
+  }
+
+  ion-thumbnail.arrow {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ion-img.arrow {
+    width: 1.5rem;
+    height: auto;
+  }
+
+  ion-row.slideImage {
+    margin-top: 1rem;
+    justify-content: space-around;
+  }
+
+  ion-thumbnail.slideImage {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  ion-row.slideImageLabel {
+    justify-content: center;
+  }
+
+  ion-label.slideImageLabel {
+    font-size: 1.2rem;
+    color: #737373;
+  }
+
+  ion-row.introContext {
+    justify-content: center;
+    margin-top: 3rem;
+    padding: 0rem 1rem;
+  }
+
+  ion-label.introContext {
+    font-size: 1.2rem;
+    color: #b7b7b7;
+  }
+
+  ion-row.select {
+    margin-top: 3rem;
+    padding: 0rem 1rem;
+  }
+
+  ion-button.select {
+    width: 100%;
+    height: 4.6rem;
+    border-radius: 2.3rem;
+    --border-radius: 2.3rem;
+    font-size: 1.1rem;
+    color: white;
+    --background: var(--pplus-blue);
+  }
+</style>
