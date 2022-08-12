@@ -15,6 +15,7 @@ import { Storage } from '@ionic/storage-angular';
 import { TenantData } from '../../model/tenant-data';
 import { CounterData } from '../../model/counter-data';
 import { ColorModeService } from './color-mode.service';
+import { Device } from '@capacitor/device';
 
 export interface Params {
   [key: string]: any;
@@ -43,7 +44,7 @@ export type ColorMode = 'auto' | 'dark' | 'light';
 })
 export class AuthServiceProvider {
   public apiHostUrl = environment.apiHostUrl;
-  public lang = 'en';
+  public lang = 'ko';
   public confirmStr = 'Confirm';
   public notificationStr = 'Notification';
   public okStr = 'Ok';
@@ -55,7 +56,8 @@ export class AuthServiceProvider {
   public root: string = '/';
   public baseHref: string = '/';
   public title: string = '';
-  theme;
+  public deviceId: string = null;
+  public pushToken: string = null;
   public user: any = null;
   private storage: Storage | null = null;
   fileChooser: any;
@@ -119,7 +121,7 @@ export class AuthServiceProvider {
         }
       );
 
-      let themeVal: ColorMode = environment.defaultTheme as ColorMode;
+      let themeVal: ColorMode = this.themeService.getMode();
       this.changeTheme(themeVal);
 
       this.okStr = this.message.get('global.ok');
@@ -129,6 +131,11 @@ export class AuthServiceProvider {
       this.closeStr = this.message.get('global.close');
       this.notificationStr = this.message.get('global.notification');
     });
+  }
+
+  public async getDeviceId() {
+    const deviceId = await Device.getId();
+    return deviceId;
   }
 
   public changeTheme(theme: ColorMode) {
@@ -460,7 +467,7 @@ export class AuthServiceProvider {
         {
           type: 'text',
           name: 'description',
-          placeholder: '비디오 설명',
+          placeholder: '설명',
           id: 'videoDescription',
         },
       ],
@@ -540,7 +547,7 @@ export class AuthServiceProvider {
     return new Date().getTime();
   }
 
-  //common/http ================================================== [
+  //Common/http ================================================== [
 
   public anyToFormData(
     model: any,

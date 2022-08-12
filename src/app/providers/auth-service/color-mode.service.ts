@@ -49,16 +49,19 @@ export class ColorModeService {
       case 'auto':
         this.darkMode$.next(this.prefDark.matches);
         this.listenToColorModeChanges();
+        document.body.classList.toggle('dark', true);
         break;
 
       case 'dark':
         this.darkMode$.next(true);
         this.removeColorModeChangesListener();
+        document.body.classList.toggle('dark', true);
         break;
 
       case 'light':
         this.darkMode$.next(false);
         this.removeColorModeChangesListener();
+        document.body.classList.toggle('dark', false);
         break;
 
       default:

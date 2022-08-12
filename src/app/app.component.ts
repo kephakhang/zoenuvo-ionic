@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ColorModeService } from './providers/auth-service/color-mode.service';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,11 @@ import { ColorModeService } from './providers/auth-service/color-mode.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(colorMode: ColorModeService) {
-    colorMode.darkMode$.subscribe((darkMode) => {
-      if (darkMode) {
-        document.body.classList.add('dark-theme');
-      } else {
-        document.body.classList.remove('dark-theme');
-      }
-    });
+  constructor(
+    private platform: Platform,
+    private colorModeService: ColorModeService
+  ) {
+    const theme = colorModeService.getMode();
+    colorModeService.setMode(theme);
   }
 }

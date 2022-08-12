@@ -1272,6 +1272,11 @@
   dependencies:
     tslib "^2.1.0"
 
+"@capacitor/device@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/device/-/device-4.0.1.tgz#4bf1e79aeba6d1ae07c7db0df44331bf18515887"
+  integrity sha512-D0jJFQYifmsgcz4X9MEEKH5E36ARK2CJcUCXJbcuFTChHSxK+ly7Kd6PZC73Y5GkEZIjpebWAWo5F3w9S4hsYQ==
+
 "@capacitor/haptics@4.0.1":
   version "4.0.1"
   resolved "https://registry.npmjs.org/@capacitor/haptics/-/haptics-4.0.1.tgz"
@@ -1423,6 +1428,20 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
+"@ionic-native/splash-screen@^5.36.0":
+  version "5.36.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/splash-screen/-/splash-screen-5.36.0.tgz#70852eaa34aa3bbe283313f82d9d974f755ec7d6"
+  integrity sha512-BfNknY1rrGE8JRnCdKfL5wz8yFLhpPU5FRr8/LA3L+EncvPvcb9LGidePoeH3gVLMkolm2DI2a/rCelNrJ1Sxw==
+  dependencies:
+    "@types/cordova" latest
+
+"@ionic-native/status-bar@^5.36.0":
+  version "5.36.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/status-bar/-/status-bar-5.36.0.tgz#d28b92c5b435f95c0a837af6c03b309f6e0e3830"
+  integrity sha512-OXC1z+4Iba4lo1dc2+0h4Gvpud3z0XQmEbw0ny9UflCuSkLqBxvmiNRU7CRQwPnT1KaGVXkaSokdwxO8H9IlNg==
+  dependencies:
+    "@types/cordova" latest
+
 "@ionic/angular-toolkit@^6.0.0":
   version "6.1.0"
   resolved "https://registry.npmjs.org/@ionic/angular-toolkit/-/angular-toolkit-6.1.0.tgz"
@@ -1458,14 +1477,6 @@
     "@stencil/core" "^2.16.0"
     ionicons "^6.0.2"
     tslib "^2.1.0"
-
-"@ionic/storage-angular@^3.0.6":
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/@ionic/storage-angular/-/storage-angular-3.0.6.tgz#9e658449f248e59f1743768f072ec93055222d1b"
-  integrity sha512-ZXlIFWGU27aCxVFgZb0KFJFtWwnn6+HK6v0rMGzjN8f7oV2ewXaQ2dl1gTw/A8YoozTVPOFxwfFHCjhWLFR1Fw==
-  dependencies:
-    "@ionic/storage" "^3.0.4"
-    tslib "^1.10.0"
 
 "@ionic/storage@^3.0.4", "@ionic/storage@^3.0.6":
   version "3.0.6"
@@ -1829,6 +1840,11 @@
   version "0.4.1"
   resolved "https://registry.npmjs.org/@types/cookie/-/cookie-0.4.1.tgz"
   integrity sha512-XW/Aa8APYr6jSVVA1y/DEIZX0/GMKLEVekNG727R8cs56ahETkRAy/3DR7+fJyh7oUgGwNQaRfXCun0+KbWY7Q==
+
+"@types/cordova@latest":
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/@types/cordova/-/cordova-0.0.34.tgz#ea7addf74ecec3d7629827a0c39e2c9addc73d04"
+  integrity sha512-rkiiTuf/z2wTd4RxFOb+clE7PF4AEJU0hsczbUdkHHBtkUmpWQpEddynNfJYKYtZFJKbq4F+brfekt1kx85IZA==
 
 "@types/cors@^2.8.12":
   version "2.8.12"

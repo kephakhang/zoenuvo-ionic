@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,50 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+html.ios {
+  --ion-default-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Roboto", sans-serif;
+}
+html.md {
+  --ion-default-font: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+html {
+  --ion-font-family: var(--ion-default-font);
+}
+
+body {
+  ion-input {
+    --background: #e8f0fe !important;
+  }
+
+  .sc-ion-input-md-h {
+    --padding-top: 1rem;
+    --padding-bottom: 1rem;
+    border-radius: 3px;
+    background-color: #e8f0fe;
+  }
+
+  ion-button {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 5rem;
+    border-radius: 3px;
+  }
+
+  ion-content {
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+  }
+}
+
+body.dark {
+  ion-input {
+    --background: gray;
+  }
+
+  .sc-ion-input-md-h {
+    background-color: gray;
+  }
+}

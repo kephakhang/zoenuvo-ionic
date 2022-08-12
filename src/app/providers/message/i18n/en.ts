@@ -1,39 +1,131 @@
 export const en = {
-    lang: "Engilish",
-    global: {
-        ok: "Ok",
-        error: "Error",
-        confirm: "Confirm",
-        cancel: "Cancel",
-        close: "Close",
-        notification: "Notification"
+  lang: 'Engilish',
+  global: {
+    ok: 'Ok',
+    error: 'Error',
+    confirm: 'Confirm',
+    cancel: 'Cancel',
+    close: 'Close',
+    notification: 'Notification',
+  },
+  auth: {
+    passwordRequired: 'Password is Required',
+    passwordLengthRange: 'Password should contain from 7 to 32 characters',
+    passwordMismatch: 'Two password are mimatched.',
+    login: {
+      greeting: 'Hello! Log in with your email or mobile.',
+      greetingEmailOnly: 'Hello! Log in with your email.',
+      idShouldBeReal: 'Email or Mobile should be the real one.',
+      emailShouldBeReal: 'Email should be the real one.',
+      idRequired: 'Email or Mobile is required.',
+      emailRequired: 'Eamil is required',
+      noAccount: "Don't have an account? ",
     },
-    auth: {
-
-        passwordRequired: "Password is Required",
-        passwordLengthRange: "Password should contain from 7 to 32 characters",
-        passwordMismatch: "Two password are mimatched.",
-        login: {
-            greeting: "Hello! Log in with your email or mobile.",
-            greetingEmailOnly: "Hello! Log in with your email.",
-            idShouldBeReal: "Email or Mobile should be the real one.",
-            emailShouldBeReal: "Email should be the real one.",
-            idRequired: "Email or Mobile is required.",
-            emailRequired: "Eamil is required",
-            noAccount: "Don't have an account? "
-
-        },
-        logout: {
-
-        },
-        register: {
-
-        },
-        request: {
-
-        },
-        reset: {
-
-        }
-    }
-}
+    logout: {},
+    register: {},
+    request: {},
+    reset: {},
+  },
+  admin: {
+    goodsMain: 'goods management',
+    buy: 'buy list management',
+    goods: 'goods list management',
+    buyGoods: 'cancel list management',
+    payment: 'payment list management',
+  },
+  login: {
+    title: 'Login',
+    loginId: 'login id',
+    loginIdPlaceHolder: 'Please input login id',
+    password: 'password',
+    passwordPlaceHolder: 'Please input password',
+    invalid: 'input field is invalid.',
+    passwordInvalid: 'The password is invalid.',
+    login: 'LogIn',
+    loginFail: 'login fails: Please check the id and password',
+  },
+  idsearch: {
+    idSearchTitle: 'ID search',
+    mobileAuthIntro: 'Please verify your mobile number.',
+    mobileInput: 'Enter phone number',
+    authInput: 'Please enter your verification number.',
+    authRequest: 'Request a certificate',
+    check: 'check',
+    idCheck: 'Please check ID.',
+    id: 'aaaa****',
+    login: 'login',
+    pwSearch: 'Forgot your password',
+    pwSearchTitle: 'Forgot your password',
+    pwInputIntro: 'Please enter a new password.',
+    pwInputIntro2: 'Please enter your new password again.',
+  },
+  signup: {
+    title: 'signup',
+    loginId: 'id',
+    password: 'password',
+    content: 'content',
+    complete: 'complete',
+    information: 'Subscription information',
+    idInput: 'Please enter your ID.',
+    duplicateCheck: 'double check',
+    pwInput: 'Please enter a password.',
+    MobileAuth: 'cell phone Certification',
+    terms: 'terms',
+    Agreement: 'Entire Agreement',
+    termsService: 'Terms of service (Essential)',
+    termsLocation: 'Terms of location agreement (Essential)',
+    termsPrivacy: 'Privacy Statement (Essential)',
+    termsMarketing: 'Accept Marketing Information (Selection)',
+    termsThird: 'Third Party Information Use Agreement (Selection)',
+    nameInput: 'Input your name, please',
+    mobileInput: 'Please enter your cell phone number',
+    name: 'name',
+    birthdate: 'birthdate',
+    birthdateInput: 'ex)19880111',
+    mobileNumber: 'mobile number',
+    nationality: 'nationality',
+    local: 'local',
+    foreigner: 'foreigner',
+    man: 'man',
+    woman: 'woman',
+    gender: 'gender',
+    mobileCompany: 'mobile company',
+    check: 'check',
+    savingSKT: 'saving phone(SKT)',
+    savingLGU: 'saving phone(LGU+)',
+    savingKT: 'saving phone(KT)',
+    signupComplete1: 'luckybol order',
+    signupComplete2: 'Sign up is complete.',
+    completeIntro1:
+      'Now you can create your own brand shop and sell real-time events',
+    completeIntro2: 'sell real-time events',
+    serviceStart: 'Start service',
+  },
+  general: {
+    title: 'PlayBol Goods Admin',
+    mobileNumber: 'mobile number',
+    address: 'address',
+    name: 'name',
+    location: 'GPS location',
+  },
+  prnumber: {
+    page: 'shop page',
+    goods: 'goods',
+    buy: 'buy',
+    buyGoods: 'buy goods',
+  },
+  buyGoods: {
+    wait: 'cancel wait',
+    done: 'cancel done',
+    processRollback: 'cancel rollback',
+    cancel: 'pay canceled',
+    refund: 'refund',
+    expire: 'expired',
+    cancelWait: 'cancel wait',
+    cancelDone: 'cancel done',
+    buyGoodsGetFail: 'cannot get cancel list',
+  },
+  storeinfo: {
+    filetransferFail: 'cannot upload the file.',
+  },
+};

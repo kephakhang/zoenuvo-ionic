@@ -11,6 +11,9 @@ export const environment = {
   socialLogin: false,
   defaultTheme: 'dark',
   factory: 'emoldino-factory-kr',
+  isDeliveryOrderable: false,
+  isPackingOrderable: false,
+  isShopOrderable: false,
   password: {
     min: 7,
     max: 32,
