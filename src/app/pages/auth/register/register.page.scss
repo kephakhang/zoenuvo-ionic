@@ -1,0 +1,33 @@
+ion-button.show-password {
+  height: 3rem;
+  button.password-eye-btn {
+    font-size: 25px;
+    // top: 36px;
+    // right: 24px;
+    cursor: pointer;
+    opacity: 0.6;
+    position: absolute;
+  }
+}
+
+ion-button.submit {
+  width: 100%;
+}
+
+div.form-control-group {
+  padding-top: 1rem;
+}
+
+ion-input {
+  ion-button {
+    order: 2;
+    padding-right: 0.5rem;
+  }
+}
+
+body {
+  ion-content {
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+  }
+}

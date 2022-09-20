@@ -1,0 +1,79 @@
+<ion-header> </ion-header>
+
+<!-- ios 상태표시줄 영역 설정 -->
+<ion-row class="iosStatusBar"> </ion-row>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <!-- 로그인 -->
+    <div class="introTitle">
+      <ion-row class="introTitle">
+        <ion-label class="introTitle"
+          >{{auth.message.get('login', 'title')}}</ion-label
+        >
+      </ion-row>
+    </div>
+    <!-- 아이디 -->
+    <ion-row class="defaultTitle">
+      <ion-label class="defaultTitle"
+        >{{auth.message.get('login.loginId')}}</ion-label
+      >
+    </ion-row>
+    <!-- 아이디 입력 -->
+    <ion-row class="defaultInput marginbottom">
+      <ion-input
+        class="defaultInput ion-no-padding"
+        type="text"
+        [(ngModel)]="loginId"
+        placeholder="{{auth.message.get('login.idInput')}}"
+      ></ion-input>
+    </ion-row>
+    <!-- 비밀번호 -->
+    <ion-row class="defaultTitle">
+      <ion-label class="defaultTitle"
+        >{{auth.message.get('login.password')}}</ion-label
+      >
+    </ion-row>
+    <!-- 비밀번호 입력 -->
+    <ion-row class="defaultInput">
+      <ion-input
+        class="defaultInput ion-no-padding"
+        required=""
+        [(ngModel)]="password"
+        type="password"
+        placeholder="{{auth.message.get('login.pwInput')}}"
+      ></ion-input>
+    </ion-row>
+    <!-- 자동로그인 -->
+    <ion-row class="autoLogin">
+      <ion-col class="autoLogin ion-no-padding">
+        <ion-checkbox class="autoLogin" [(ngModel)]="autoLogin"></ion-checkbox>
+        <ion-label class="autoLogin"
+          >{{auth.message.get('login.autoLogin')}}</ion-label
+        >
+      </ion-col>
+      <!-- 로그인 버튼 -->
+      <ion-col class="login" size="auto ion-no-padding">
+        <ion-button class="login" (click)="login()"
+          >{{auth.message.get('login.title')}}</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row class="search">
+      <!-- 아이디 찾기 -->
+      <ion-button class="search white" (click)="idSearch()"
+        >{{auth.message.get('login.idSearch')}}</ion-button
+      >
+      <!-- 패스워드 찾기 -->
+      <ion-button class="search white" (click)="pwSearch()"
+        >{{auth.message.get('login.pwSearch')}}</ion-button
+      >
+    </ion-row>
+    <!-- 회원가입 (p+) -->
+    <ion-row class="signup">
+      <ion-button class="signup white" (click)="signup()"
+        >{{auth.message.get('login.signup')}}</ion-button
+      >
+    </ion-row>
+  </div>
+</ion-content>

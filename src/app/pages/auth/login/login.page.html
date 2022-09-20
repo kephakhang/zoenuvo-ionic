@@ -1,0 +1,137 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>{{ title }}</ion-title>
+    <ion-toggle
+      slot="end"
+      [ngModel]="darkMode"
+      (ionChange)="toggleColorMode()"
+    ></ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="text-align: center">
+    <h3 id="title" class="title">eMoldino Serenity Server</h3>
+    <img src="/assets/images/emol-diagram.gif" width="300px" />
+  </div>
+
+  <h1 id="title" class="title">Login</h1>
+
+  <p class="sub-title">{{ greeting }}</p>
+
+  <form aria-labelledby="title">
+    <div class="form-control-group">
+      <ion-label position="floating">Email or Mobile:</ion-label>
+      <ion-input
+        [value]="user.id"
+        placeholder="Email or Mobile"
+        clearInput
+        autofocus
+        shape="round"
+        [required]="true"
+      ></ion-input>
+      <ng-container>
+        <p class="caption status-danger" *ngIf="user.id.trim() === ''">
+          {{ idRequired }}
+        </p>
+        <p class="caption status-danger" *ngIf="isInvalidId">
+          {{ idShouldBeReal }}
+        </p>
+      </ng-container>
+    </div>
+
+    <div class="form-control-group">
+      <span class="label-with-link">
+        <ion-label position="floating">Password:</ion-label>
+        <a class="forgot-password caption-2" routerLink="/auth/request-password"
+          >Forgot Password?</a
+        >
+      </span>
+      <!--nb-form-field-->
+      <ion-input
+        [value]="user.password"
+        type="password"
+        placeholder="Password"
+        clearInput
+        autofocus
+        shape="round"
+        [required]="true"
+        [minlength]="password.min"
+        [maxlength]="password.max"
+      ></ion-input>
+      <!--button nbSuffix nbButton ghost (click)="toggleShowPassword()">
+            <nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+                      pack="eva"
+                      [attr.aria-label]="showPassword ? 'hide password' : 'show password'">
+            </nb-icon>
+          </button>
+        </nb-form-field-->
+      <ng-container *ngIf="user.id.trim() !== ''">
+        <p class="caption status-danger" *ngIf="user.password.trim() === ''">
+          {{ auth.message.get('auth.passwordRequired') }}
+        </p>
+        <p class="caption status-danger" *ngIf="isInvalidPassword">
+          {{ auth.message.get('auth.passwordRuleError') }}
+        </p>
+      </ng-container>
+    </div>
+
+    <!--div class="form-control-group accept-group">
+    <nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe" (click)="toggleRemeberMe()">Remember me</nb-checkbox>
+  </div-->
+
+    <ion-button
+      class="submit"
+      expand="full"
+      color="primary"
+      shapre="round"
+      (click)="login()"
+      [disabled]="submitted"
+      [class.btn-pulse]="submitted"
+    >
+      Log In
+    </ion-button>
+  </form>
+
+  <!--section *ngIf="socialLogin && socialLinks && socialLinks.length > 0" class="links" aria-label="Social sign in">
+  or enter with:
+  <div class="socials">
+    <ng-container *ngFor="let socialLink of socialLinks">
+      <a *ngIf="socialLink.link"
+         (click)="snsLogin(socialLink)"
+         [routerLink]="socialLink.link"
+         [attr.target]="socialLink.target"
+         [attr.class]="socialLink.icon"
+         [class.with-icon]="socialLink.icon">
+        <nb-icon *ngIf="socialLink.icon; else title" [icon]="socialLink.icon"></nb-icon>
+        <ng-template #title>{{ socialLink.title }}</ng-template>
+      </a>
+      <apple-signin *ngIf="socialLink.title === 'Apple'"
+          [state]="apple.state"
+          [redirectURI]="apple.redirectURI"
+          [scope]="apple.scope"
+          [clientId]="apple.clientId"
+          [color]="apple.color"
+          [type]="apple.type"></apple-signin>
+
+      <a *ngIf="socialLink.title !== 'Apple'"
+         (click)="snsLogin(socialLink)"
+         [attr.href]="socialLink.url"
+         [attr.target]="socialLink.target"
+         [attr.class]="socialLink.icon"
+         [class.with-icon]="socialLink.icon">
+        <nb-icon *ngIf="socialLink.icon; else title" [icon]="socialLink.icon"></nb-icon>
+        <ng-template #title>{{ socialLink.title }}</ng-template>
+      </a>
+    </ng-container>
+  </div>
+</section-->
+
+  <section class="another-action" aria-label="Register">
+    {{ auth.message.get('auth.login.noAccount') }}<a
+      class="text-link"
+      routerLink="/auth/register"
+      >Register</a
+    >
+  </section>
+</ion-content>

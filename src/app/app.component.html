@@ -1,3 +1,29 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-toolbar>
+    <ion-title>Serenity</ion-title>
+    <ion-toggle
+      slot="end"
+      [ngModel]="darkMode"
+      (ionChange)="toggleColorMode()"
+    ></ion-toggle>
+  </ion-toolbar>
+  <ion-split-pane #splitPane when="md" contentId="mainPane">
+    <ion-menu #menuPane contentId="mainPane" type="overlay">
+      <ion-content>
+        <ion-header>
+          <ion-toolbar>
+            <ion-button fill="clear" color="dark" slot="start">
+              <ion-icon name="menu-outline"></ion-icon>
+            </ion-button>
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <app-side-menu [menuList]="pageList"></app-side-menu>
+      </ion-content>
+
+      <div #divider class="divider"></div>
+    </ion-menu>
+
+    <ion-router-outlet #mainPane id="mainPane"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

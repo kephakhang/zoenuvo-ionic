@@ -1,0 +1,246 @@
+<ion-header>
+</ion-header>
+
+<!-- 헤더설정 -->
+<div class="header">
+  <!-- ios 상태표시줄 영역 설정 -->
+<ion-row class="iosStatusBar">
+  </ion-row>  
+  <ion-row class="header">
+    <ion-col class="header" size="auto ion-no-padding">
+      <ion-thumbnail class="header" (click)='close()'>
+        <ion-img class="close" src="{{auth.root}}assets/png/btn_close.png"></ion-img>
+      </ion-thumbnail>
+    </ion-col>
+  </ion-row>
+</div>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <!-- 휴대폰 인증 -->
+    <div class="introTitle">
+      <ion-row class="introTitle">
+        <ion-label class="introTitle">{{auth.message.get('signup', 'MobileAuth')}}</ion-label>
+      </ion-row>
+    </div>
+    <!-- 이름 -->
+    <ion-row class="defaultTitle">
+      <ion-label class="defaultTitle">{{auth.message.get('signup','name')}}</ion-label>
+    </ion-row>
+    <!-- 이름 입력 -->
+    <ion-row class="defaultInput">
+      <ion-col class="defaultInput ion-no-padding">
+        <ion-input class="defaultInput ion-no-padding" type="text" [(ngModel)]='name'
+          placeholder="{{auth.message.get('signup','nameInput')}}"></ion-input>
+      </ion-col>
+    </ion-row>
+    <!-- 휴대폰번호 -->
+    <ion-row class="defaultTitle">
+      <ion-label class="defaultTitle">{{auth.message.get('signup', 'mobileNumber')}}</ion-label>
+    </ion-row>
+    <!-- 휴대폰번호 입력 -->
+    <ion-row class="defaultInput">
+      <ion-col class="defaultInput ion-no-padding">
+        <ion-input class="defaultInput ion-no-padding" type="tel" [(ngModel)]='mobile'
+          placeholder="{{auth.message.get('signup', 'mobileInput')}}">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+    <!-- 생년월일 -->
+    <ion-row class="defaultTitle">
+      <ion-label class="defaultTitle">{{auth.message.get('signup', 'birthdate')}}</ion-label>
+    </ion-row>
+    <!-- 생년월일 입력 -->
+    <ion-row class="defaultInput">
+      <ion-col class="defaultInput ion-no-padding">
+        <ion-datetime class="defaultInput ion-no-padding" [(ngModel)]='birthday' display-format="YYYY-MM-DD"
+          placeholder="{{auth.message.get('signup', 'birthdateInput')}}"></ion-datetime>
+      </ion-col>
+    </ion-row>
+    <!-- 국적 -->
+    <ion-row class="defaultTitle paddingbottomzero">
+      <ion-label class="defaultTitle">{{auth.message.get('signup', 'nationality')}}</ion-label>
+    </ion-row>
+    <ion-row class="defaultInput bordernone">
+      <ion-radio-group class="radio" [(ngModel)]="nation">
+        <ion-row class="radio">
+          <ion-col class="radio" size="auto">
+            <ion-item class="radio">
+              <ion-label class="radio">{{auth.message.get('signup', 'local')}}</ion-label>
+              <ion-radio class="radio" slot="start" value="0" checked></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col class="radio" size="auto">
+            <ion-item class="radio">
+              <ion-label class="radio">{{auth.message.get('signup', 'foreigner')}}</ion-label>
+              <ion-radio class="radio" slot="start" value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+    </ion-row>
+    <!-- 성별 -->
+    <ion-row class="defaultTitle paddingbottomzero">
+      <ion-label class="defaultTitle">{{auth.message.get('signup', 'gender')}}</ion-label>
+    </ion-row>
+    <ion-row class="defaultInput bordernone">
+      <ion-radio-group class="radio" [(ngModel)]="gender">
+        <ion-row class="radio">
+          <ion-col class="radio" size="auto">
+            <ion-item class="radio">
+              <ion-label class="radio">{{auth.message.get('signup', 'man')}}</ion-label>
+              <ion-radio class="radio" slot="start" value="0" checked></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col class="radio" size="auto">
+            <ion-item class="radio">
+              <ion-label class="radio">{{auth.message.get('signup', 'woman')}}</ion-label>
+              <ion-radio class="radio" slot="start" value="1"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+    </ion-row>
+    <!-- 확인 버튼 -->
+    <ion-row class="check">
+      <ion-button class="check" (click)='signup()'>{{auth.message.get('signup', 'check')}}</ion-button>
+    </ion-row>
+
+  </div>
+</ion-content>
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+<style>
+
+  div.header{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+
+  ion-row.header {
+    justify-content: flex-end;
+    border: none;
+    background: inherit;
+  }
+
+  div.container {
+    flex-direction: column;
+    padding: 0rem 1.5rem;
+  }
+
+  div.introTitle {
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+
+  ion-label.introTitle {
+    font-size: 2.7rem;
+  }
+
+  ion-row.idInput {
+    margin-bottom: 0rem !important;
+  }
+
+  ion-row.pwInput {
+    margin-top: 2rem !important;
+  }
+
+  ion-row.defaultTitle {
+    padding: 1rem 0rem;
+  }
+
+  ion-label.defaultTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  ion-label.usableId {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--pplus-blue);
+  }
+
+  ion-label.dupleId {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--pplus-red);
+  }
+
+  ion-row.authCheck {
+    display: none;
+  }
+
+  ion-row.authComplete {
+    border-bottom: inherit !important;
+  }
+
+  ion-row.defaultInput {
+    border-bottom: solid 0.05rem var(--pplus-border);
+    margin-bottom: 2rem;
+  }
+
+  ion-input.defaultInput {
+    height: 100%;
+    font-size: 1.4rem;
+    --placeholder-color: var(--pplus-placeholder);
+    --placeholder-opacity: none;
+  }
+
+  ion-radio-group.radio {
+    width: 100%;
+  }
+
+  ion-radio.radio {
+    margin: 0rem;
+    margin-right: 1rem;
+  }
+
+  ion-label.radio {
+    margin: 0rem;
+    font-size: 1.4rem;
+  }
+
+  ion-item.radio {
+    --inner-border-width: 0rem;
+    --padding-start: 0rem;
+  }
+
+  /* 생년월일 입력 */
+  ion-datetime.defaultInput {
+    height: 100%;
+    font-size: 1.4rem;
+    --placeholder-color: var(--pplus-placeholder);
+    --placeholder-opacity: none;
+  }
+
+  /* 완료 버튼 */
+  ion-row.check {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  ion-button.check {
+    font-size: 1rem;
+    width: 100%;
+    height: 4rem;
+    --background: var(--pplus-blue);
+    --border-radius: 2rem;
+    border-radius: 2rem;
+    color: white;
+    font-weight: bold;
+    --box-shadow: none;
+  }
+
+  ion-row.paddingbottomzero{
+    padding-bottom:0rem;
+  }
+
+  ion-row.bordernone{
+    border: 0rem;
+  }
+</style>

@@ -1,0 +1,10 @@
+app-titlebar {
+  height: 3rem;
+}
+
+body {
+  ion-content {
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+  }
+}

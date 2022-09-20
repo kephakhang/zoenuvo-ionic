@@ -11,6 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Message } from './providers/message/message';
 import { AuthServiceProvider } from './providers/auth-service/auth-service';
 import { ColorModeService } from './providers/auth-service/color-mode.service';
+import { ComponentsModule } from './components/components.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -21,6 +22,7 @@ import { ColorModeService } from './providers/auth-service/color-mode.service';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ComponentsModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
   ],

@@ -1,0 +1,11 @@
+ion-header {
+  height: 3rem;
+
+  ion-toolbar {
+    --background: var(--ion-toolbar-background);
+  }
+
+  ion-title {
+    color: var(--ion-color-dark);
+  }
+}

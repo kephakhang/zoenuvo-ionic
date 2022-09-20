@@ -10,12 +10,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
-  },
-  {
-    path: 'login',
-    loadChildren: () =>
-      import('./pages/auth/login/login.module').then((m) => m.LoginPageModule),
+      import('./folder/folder.module').then((m) => m.FolderPageModule),
   },
   {
     path: '',
@@ -23,8 +18,23 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'register',
-    loadChildren: () => import('./pages/auth/register/register.module').then( m => m.RegisterPageModule)
+    path: 'auth/login',
+    loadChildren: () =>
+      import('./pages/auth/login/login.module').then((m) => m.LoginPageModule),
+  },
+  {
+    path: 'auth/register',
+    loadChildren: () =>
+      import('./pages/auth/register/register.module').then(
+        (m) => m.RegisterPageModule
+      ),
+  },
+  {
+    path: 'factory/counter',
+    loadChildren: () =>
+      import('./pages/factory/counter/counter.module').then(
+        (m) => m.CounterPageModule
+      ),
   },
 ];
 
